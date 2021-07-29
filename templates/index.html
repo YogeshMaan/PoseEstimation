@@ -1,0 +1,37 @@
+<html>
+
+<style>
+.content {
+margin: auto;
+width: 60%;
+border: 5px solid #FFFFFF;
+padding: 20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1{
+text-align : center;
+color : orange;
+}
+
+</style>
+<body style="background-color: orange;">
+
+<div class="content">
+    <h1 style="background-color: white;"> POSE ESTIMATOR </h1>
+<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data' class="center">
+    <input type="file" name='file1' required="required">
+<input type="Submit" name="btn">
+</form>
+</div>
+
+</body>
+
+</html>
+
