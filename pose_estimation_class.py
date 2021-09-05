@@ -26,14 +26,3 @@ class PoseDetector():
                 self.mpDraw.draw_landmarks(img, self.results.pose_landmarks, self.mpPose.POSE_CONNECTIONS)
 
         return img, self.results.pose_landmarks, self.mpPose.POSE_CONNECTIONS
-
-    # def getPosition(self, img, draw=True):
-    #     lmList= []
-    #     if self.results.pose_landmarks:
-    #         for id, lm in enumerate(self.results.pose_landmarks.landmark):
-    #             h, w, c = img.shape
-    #             cx, cy = int(lm.x * w), int(lm.y * h)
-    #             lmList.append([id, cx, cy])
-    #             if draw:
-    #                 cv2.circle(img, (cx, cy), 5, (255, 0, 0), cv2.FILLED)
-    #     return lmList
