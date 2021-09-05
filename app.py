@@ -15,19 +15,15 @@ def after():
     try:
         img = request.files['file1']
         img.save('static/file.jpg')
-
-        #======================================
+        
         img1 = cv2.imread('static/file.jpg')
 
-        # Need Image as "img"
         detector = pm.PoseDetector()
-        # img1 = cv2.resize(img1, (416, 416))
 
         img1, p_landmarks, p_connections = detector.findPose(img1, False)
 
         mp.solutions.drawing_utils.draw_landmarks(img1, p_landmarks, p_connections)
 
-        # We have img to show
         cv2.imwrite('static/after.jpg', img1)
 
         return render_template('estimated.html')
